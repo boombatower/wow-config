@@ -1,0 +1,57 @@
+VER 3 0000000000000005 "class" "INV_MISC_QUESTIONMARK"
+UnitClass("Uurd")
+END
+VER 3 0000000000000007 "Counterspell" "INV_MISC_QUESTIONMARK"
+/cast [nomod] Counterspell
+/cast [mod:ctrl, @focus] Counterspell
+END
+VER 3 0000000000000002 "Disenchant" "INV_STAFF_10"
+/cast Disenchant
+/use Simple Kilt
+END
+VER 3 0000000000000003 "Enchant" "INV_MISC_NOTE_05"
+#showtooltip
+/run CloseTradeSkill()
+/cast Enchanting
+/run local s for i=1,GetNumTradeSkills() do s=GetTradeSkillSelectionIndex() if s then DoTradeSkill(s) end end
+/use 0 1
+/script ReplaceEnchant() 
+END
+VER 3 0000000000000001 "Flamenigger" "SPELL_FIRE_SELFDESTRUCT"
+#show Flamestrike
+/cast Flamestrike
+/cast Flamestrike
+/cast Flamestrike
+/cast Flamestrike
+/cast Flamestrike
+END
+VER 3 000000000000000B "focus target" "INV_MISC_QUESTIONMARK"
+/focus target
+END
+VER 3 0000000000000009 "Ice Ward" "INV_MISC_QUESTIONMARK"
+/cast [nomod] Ice Ward
+/cast [mod:ctrl, @focus] Ice Ward
+END
+VER 3 000000000000000C "kneel" "INV_MISC_QUESTIONMARK"
+/kneel
+END
+VER 3 0000000000000004 "magic" "INV_MISC_QUESTIONMARK"
+/cast [mod:ctrl, @focustarget, exists, harm, nodead] Polymorph; [mod:ctrl, @focus, exists, harm, nodead] Polymorph; Polymorph
+END
+VER 3 0000000000000006 "Polymorph" "INV_MISC_QUESTIONMARK"
+/cast [nomod] Polymorph
+/cast [mod:ctrl, @focus] Polymorph
+END
+VER 3 0000000000000008 "Spellsteal" "INV_MISC_QUESTIONMARK"
+/cast [nomod] SpellSteal
+/cast [mod:ctrl, @focus] Spellsteal
+END
+VER 3 000000000000000A "target/focus" "INV_MISC_QUESTIONMARK"
+/cleartarget [@target, dead]
+/clearfocus [@focus, dead]
+/target focus
+/cleartarget [@focus, noexists]
+/targetlasttarget
+/focus target
+/targetlasttarget
+END
